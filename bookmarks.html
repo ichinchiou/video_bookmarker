@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bookmarks Management</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="libs/jquery-3.3.1.min.js"></script>
+		<script src="bookmarks.js"></script>
+
+		<link href="libs/jsoneditor.min.css" rel="stylesheet" type="text/css">
+		<script src="libs/jsoneditor.min.js"></script>
+
+		<link rel="stylesheet" href="libs/pure-min.css"/>
+		<link rel="stylesheet" href="libs/pure-grids-responsive-min.css"/>
+		<link rel="stylesheet" href="libs/solid.css"/>
+		<link rel="stylesheet" href="libs/fontawesome.css"/>
+
+		<style>
+			body {
+				margin: 0;
+				margin-bottom: 20px;
+				padding-left: 15px;
+				padding-top: 0px;
+				font-family: sans-serif;
+				font-size: 12px;
+				color: rgb(48, 57, 66);
+			}
+
+			h1, h2, h3 {
+				font-weight: normal;
+				line-height: 1;
+					user-select: none;
+				cursor: default;
+			}
+			h1 {
+				font-size: 1.5em;
+				margin: 21px 0 13px;
+			}
+			h3 {
+				font-size: 1.2em;
+				margin-bottom: 0.8em;
+				color: black;
+			}
+			p {
+				margin: 0.65em 0;
+			}
+
+			header {
+				position: fixed;
+				top: 0;
+				left: 15px;
+				right: 0;
+				border-bottom: 1px solid #EEE;
+				background: linear-gradient(white, white 40%, rgba(255, 255, 255, 0.92));
+			}
+			header, section {
+				min-width: 600px;
+				max-width: 738px;
+			}
+
+			.listtable {
+				text-align: left;
+				line-height: 40px;
+				border-collapse: separate;
+				border-spacing: 0;
+				border: 2px solid #3883fa;
+				width: 95%;
+				margin: 10px 0;
+				border-radius: .25rem;
+			}
+
+			.listtable thead tr:first-child {
+				background: #3883fa;
+				color: #fff;
+				border: none;
+			}
+
+			.listtable th:first-child,
+			.listtable td:first-child {
+				padding: 0 15px 0 20px;
+			}
+
+			.listtable thead tr:last-child th {
+				border-bottom: 3px solid #ddd;
+			}
+
+			.listtable tbody tr:hover {
+				background-color: #f2f2f2;
+				cursor: default;
+			}
+
+			.listtable tbody tr:last-child td {
+				border: none;
+			}
+
+			.listtable tbody td {
+				border-bottom: 1px solid #ddd;
+			}
+
+			.button-success,
+			.button-error,
+			.button-warning,
+			.button-secondary {
+				color: white;
+				border-radius: 4px;
+				text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+			}
+
+			.button-success {
+				background: rgb(28, 184, 65); /* this is a green */
+			}
+
+			.button-error {
+				background: rgb(202, 60, 60); /* this is a maroon */
+			}
+
+			.button-warning {
+				background: rgb(223, 117, 20); /* this is an orange */
+			}
+
+			.button-secondary {
+				background: rgb(66, 184, 221); /* this is a light blue */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tabledata">
+			<table class='listtable'>
+				<thead>
+				<tr>
+					<th colspan='5'>Video Bookmarks Management</th>
+				</tr>
+				<tr>
+					<th><label><input type='checkbox' id='selectAll'> Index</label></th>
+					<th>Name</th>
+					<th>URL</th>
+					<th>Update Time</th>
+					<th>Edit</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<button id="deleteBtn" class="button-error pure-button"><i class="fas fa-trash"></i> DELETE checked items</button>
+		<button id="saveBtn" class="button-success pure-button" style="display: none"><i class="fas fa-save"></i> Save</button>
+
+		<div id="jsoneditor1" style="width: 95%; height: 500px; margin-top: 10px;"></div>
+
+		<template id="record">
+			<tr>
+				<td><label><input type='checkbox' class='select' value="{valueIndex}">{index}</label></td>";
+				<td>{name}</td>
+				<td><a href={url} target="_blank">{url}</a></td>
+				<td>{time}</td>
+				<td><label><button class='modify button-success pure-button' value="{valueIndex}"><i class='fas fa-edit'></i></button></label></td>
+			</tr>
+		</template>
+  </body>
+</html>

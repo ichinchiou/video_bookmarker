@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Options</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="libs/jquery-3.3.1.min.js"></script>
+
+        <link rel="stylesheet" href="libs/pure-min.css"/>
+        <link rel="stylesheet" href="libs/pure-grids-responsive-min.css"/>
+        <link rel="stylesheet" href="libs/solid.css"/>
+        <link rel="stylesheet" href="libs/fontawesome.css"/>
+
+		<style>
+			body {
+				margin: 0;
+				margin-bottom: 20px;
+				padding-left: 15px;
+				padding-top: 0px;
+				font-family: sans-serif;
+				font-size: 12px;
+				color: rgb(48, 57, 66);
+			}
+
+			h1, h2, h3 {
+				font-weight: normal;
+				line-height: 1;
+					user-select: none;
+				cursor: default;
+			}
+			h1 {
+				font-size: 1.5em;
+				margin: 21px 0 13px;
+			}
+			h3 {
+				font-size: 1.2em;
+				margin-bottom: 0.8em;
+				color: black;
+			}
+			p {
+				margin: 0.65em 0;
+			}
+
+			header {
+				position: fixed;
+				top: 0;
+				left: 15px;
+				right: 0;
+				border-bottom: 1px solid #EEE;
+				background: linear-gradient(white, white 40%, rgba(255, 255, 255, 0.92));
+			}
+			header, section {
+				min-width: 600px;
+				max-width: 738px;
+			}
+
+			.listtable {
+				text-align: left;
+				line-height: 40px;
+				border-collapse: separate;
+				border-spacing: 0;
+				border: 2px solid #3883fa;
+				width: 80%;
+				margin: 10px 0;
+				border-radius: .25rem;
+			}
+
+			.listtable thead tr:first-child {
+				background: #3883fa;
+				color: #fff;
+				border: none;
+			}
+
+			.listtable th:first-child,
+			.listtable td:first-child {
+				padding: 0 15px 0 20px;
+			}
+
+			.listtable thead tr:last-child th {
+				border-bottom: 3px solid #ddd;
+			}
+
+			.listtable tbody tr:hover {
+				background-color: #f2f2f2;
+				cursor: default;
+			}
+
+			.listtable tbody tr:last-child td {
+				border: none;
+			}
+
+			.listtable tbody td {
+				border-bottom: 1px solid #ddd;
+			}
+
+            .button-success,
+            .button-error,
+            .button-warning,
+            .button-secondary {
+                color: white;
+                border-radius: 4px;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .button-success {
+                background: rgb(28, 184, 65); /* this is a green */
+            }
+
+            .button-error {
+                background: rgb(202, 60, 60); /* this is a maroon */
+            }
+
+            .button-warning {
+                background: rgb(223, 117, 20); /* this is an orange */
+            }
+
+            .button-secondary {
+                background: rgb(66, 184, 221); /* this is a light blue */
+            }
+		</style>
+	</head>
+	<body>
+		<form class="pure-form pure-form-aligned">
+			<fieldset>
+				<h2>Video Bookmarker</h2>
+
+				<hr>
+				
+				<h3>Shortcuts</h3>
+
+				<div class="pure-control-group">
+					<label for="addBookmark">add bookmarks</label>
+					<input id="addBookmark" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+		
+				<div class="pure-control-group">
+					<label for="jumpToPrevBookmark">jump to prev bookmark</label>
+					<input id="jumpToPrevBookmark" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+
+				<div class="pure-control-group">
+					<label for="jumpToNextBookmark">jump to next bookmark</label>
+					<input id="jumpToNextBookmark" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+
+				<div class="pure-control-group">
+					<label>remove bookmark or AB repeat</label>
+					<span>Double click bookmark</span>
+				</div>
+
+				<div class="pure-control-group">
+					<label for="setRepeatStart">AB Repeat start time</label>
+					<input id="setRepeatStart" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+				
+				<div class="pure-control-group">
+					<label for="setRepeatEnd">AB Repeat end time</label>
+					<input id="setRepeatEnd" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+				
+				<div class="pure-control-group">
+					<label for="faster">speed up</label>
+					<input id="faster" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+				
+				<div class="pure-control-group">
+					<label for="slower">slow down</label>
+					<input id="slower" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+				
+				<div class="pure-control-group">
+					<label for="loop">repeat playback</label>
+					<input id="loop" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+		
+				<div class="pure-control-group">
+					<label for="hide">hide bookmarks</label>
+					<input id="hide" class="keyBinding" placeholder="press a key" type="text" value="">
+				</div>
+				
+				<h3>Options</h3>
+		
+				<div class="pure-control-group">
+					<label for="latency">latency after switching bookmark(second)</label>
+					<input id="latency" type="text" value="">
+				</div>
+		
+				<div class="pure-control-group">
+					<label for="saveOptionsBtn"></label>
+					<button id="saveOptionsBtn" class="pure-button pure-button-primary"><i class="fas fa-save"></i> Save</button>
+					<button id="bookmarksBtn" class="pure-button"><i class="fas fa-tags"></i> Bookmarks Management</button>
+				</div>
+
+				<hr>
+
+				<p>This extension is only compatible with HTML5 video. <br>Bookmarks and AB repeat marks are currently visible on progress bar in Youtube, Vimeo, bilibili and niconico.</p>
+			</fieldset>
+		</form>
+
+        <script src="options.js"></script>
+  </body>
+</html>

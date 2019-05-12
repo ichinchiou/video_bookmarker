@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Video Bookmarker Controller</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <style>
+      body {
+        width: 250px;
+      }
+
+      .keyBinding{
+        background-color: lightgray;
+        font-weight: bold;
+      }
+
+      button {
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  </style>
+
+  <body>
+    <p id="shortcut">
+      Add bookmarks:<span class="keyBinding"> {addBookmark} </span><br>
+      Switch bookmarks:<span class="keyBinding"> {jumpToPrevBookmark} </span>、<span class="keyBinding"> {jumpToNextBookmark} </span><br>
+      Repeat AB:<span class="keyBinding"> {setRepeatStart} </span>、<span class="keyBinding"> {setRepeatEnd} </span><br>
+      Remove bookmarks:<span class="keyBinding"> Double Click </span>
+    </p>
+    <hr>
+    More: 
+    <button id="options">options</button>
+    <hr>
+    <button id="feedback">feedback</button>
+    <button id="about">about</button>
+    <script src="./popup.js"></script>
+  </body>
+</html>
