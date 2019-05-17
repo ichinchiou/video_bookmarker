@@ -8,7 +8,7 @@
 <img alt="Demo" src="img/demo.JPG" width="70%">
 
 ## How to Use
-1. Install Chrome extension
+1. Install Chrome extension [HERE](https://chrome.google.com/webstore/detail/video-bookmarks-controlle/mknjmmimahenojgmpamokenibeecfonh)
 2. Start a video
 3. Set and jump to bookmarks
 
