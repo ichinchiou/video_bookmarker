@@ -4,7 +4,7 @@
   "description": "Set and jump to bookmarks in HTML5 video with quick shortcuts.",
   "version": "1.0.1",
   "manifest_version": 3,
-  "minimum_chrome_version": "23",
+  "minimum_chrome_version": "88",
   "homepage_url": "https://github.com/chiubeta/video_bookmarker",
   "icons": {
     "16": "icons/icon16.png",
