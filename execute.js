@@ -197,6 +197,7 @@ const renderRepeat = (type) => {
 };
 
 const repeatAB = () => {
+  clearInterval(repeatKey);
   setVideoTime(repeat_start);
   repeatKey = setInterval(()=>{
     if($video[0].currentTime >= repeat_end){
@@ -262,7 +263,6 @@ const progressBarEventBinding = () => {
     $(channel.progressSelector).on("dblclick", ".video-bookmarker-bookmark", function(e){
       if(bookmark.timeList.length == 1){
         bookmark.timeList = [];
-        bookmarks.splice(bookmarks.indexOf(bookmark), 1);
       } else {
         let time = $(e.target).data("time");
         bookmark.timeList.splice(bookmark.timeList.indexOf(time), 1);

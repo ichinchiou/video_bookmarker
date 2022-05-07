@@ -103,17 +103,18 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("saveOptionsBtn").addEventListener('click', (e) => {
         saveOptions(e);
     });
-    
-    document.getElementsByClassName("keyBinding").addEventListener('keypress', (e) => {
-        inputFilterNumbersOnly(e);
-    });
-    document.getElementsByClassName("keyBinding").addEventListener('keydown', (e) => {
-        recordKeyPress(e);
-    });
-    document.getElementsByClassName("keyBinding").addEventListener('focus', (e) => {
-        e.target.value = "";
-    });
-    document.getElementsByClassName("keyBinding").addEventListener('blur', (e) => {
-        e.target.value = keyCodeAliases[e.target.keyCode] || String.fromCharCode(e.target.keyCode);
+    Array.from(document.getElementsByClassName("keyBinding")).forEach(link => {
+        link.addEventListener('keypress', e => {
+            inputFilterNumbersOnly(e);
+        });
+        link.addEventListener('keydown', e => {
+            recordKeyPress(e);
+        });
+        link.addEventListener('focus', e => {
+            e.target.value = "";
+        });
+        link.addEventListener('blur', e => {
+            e.target.value = keyCodeAliases[e.target.keyCode] || String.fromCharCode(e.target.keyCode);
+        });
     });
 });

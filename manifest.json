@@ -2,8 +2,8 @@
   "name": "Video Bookmarks Controller",
   "short_name": "videobookmarkers",
   "description": "Set and jump to bookmarks in HTML5 video with quick shortcuts.",
-  "version": "1.0.0",
-  "manifest_version": 2,
+  "version": "1.0.1",
+  "manifest_version": 3,
   "minimum_chrome_version": "23",
   "homepage_url": "https://github.com/chiubeta/video_bookmarker",
   "icons": {
@@ -11,7 +11,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "19": "icons/icon19.png",
       "38": "icons/icon38.png",
@@ -35,6 +35,6 @@
     }
   ],
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
   }
 }
