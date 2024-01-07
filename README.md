@@ -58,7 +58,7 @@ You can reassign the default shortcut keys in the extensions settings page.
 
 ## Meta
 
-Yichin Chiu – [website](https://rollingseal.com) – chiubeta@gmail.com
+Yichin Chiu – ichinchiou@gmail.com
 
 MIT license
 
